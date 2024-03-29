@@ -11,10 +11,7 @@ public class CheckingAccount extends BankAccount {
 	}
 	
 	public void displayAccount() {
-		System.out.println("Account ID: " + getAccountID() + 
-	 			"\nBalance: " + getBalance() +
-	 			"\nFirst Name: " + getFirstName() +
-	 			"\nLast Name: " + getLastName());
+		accountSummary();
 		System.out.println("Itnerest Rate: " + intRate +"%");
 	}
 }

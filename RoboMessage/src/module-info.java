@@ -4,5 +4,5 @@
 /**
  * 
  */
-module BankingSystem {
+module RoboMessage {
 }

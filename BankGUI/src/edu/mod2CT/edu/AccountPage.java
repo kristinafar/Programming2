@@ -8,64 +8,103 @@ import javax.swing.JButton;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.NumberFormat;
+import javax.swing.JFormattedTextField;
 
 
 
-public class AccountPage {
+public class AccountPage extends bankAccount {
 	
-	public static void main(String[] args) {
 
-		int balance = 0;
-		int userBal;
+	public static void main(String[] args) {
+		
+		final bankAccount account = new bankAccount();
+		
+		
 		//make frame
 		JFrame accountPage = new JFrame();
 		accountPage.setTitle("Fells Wargo");
-		accountPage.setSize(500, 500);
 		accountPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		accountPage.setVisible(true);
 		accountPage.setLayout(new FlowLayout());
 		
+		//make panel
+		JPanel accountBalance = new JPanel();
 		
 		//make input and buttons
-		JLabel curBalance = new JLabel("Enter Account Balance: ");
-		JTextField balField = new JTextField(8);
+		final JLabel curBalance = new JLabel("Enter Account Balance: ");
+		final JLabel finBalance = new JLabel("Current Balance: " + account.getBalance());
+		final JTextField balField = new JTextField();
 		balField.setEditable(true);
-		balField.setText("Enter amount");
+		balField.setColumns(7);
 		JButton depButton = new JButton("Deposit");
 		JButton withButton = new JButton("Withdraw");
-		JButton balButton = new JButton("Current Balance");
 		
 		
+		 
 		depButton.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-			curBalance.setText("Enter Deposit Amount: ");
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			String userInput;
+			double depAmt;
+			
+			userInput = balField.getText();
+			depAmt = Double.parseDouble(userInput);
+			account.deposit(depAmt);
+			finBalance.setText("Current Balance: " + account.getBalance());
 			
 		}
 	});
 		
+		withButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			String userInput;
+			double wAmt;
+			
+			userInput = balField.getText();
+			wAmt = Double.parseDouble(userInput);
+			account.withdrawl(wAmt);
+			finBalance.setText("Current Balance: " + account.getBalance());
+			
+		}
+	});
+		
+		balField.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			String userInput;
+			double startAmt;
+			
+			userInput = balField.getText();
+			startAmt = Double.parseDouble(userInput);
+			account.setBalance(startAmt);
+			finBalance.setText("Current Balance: " + account.getBalance());
+			curBalance.setText("Enter Withdrawl/Deposit Amount");
+				
+			
+		}
+	});
 	
 		
 		
-		//make panels
-		JPanel accountBalance = new JPanel();
 		
-		 accountPage.add(curBalance);
-		 accountPage.add(balField);
-		 accountPage.add(depButton);
-		 accountPage.add(withButton);
-		 accountPage.add(balButton);
+		//make panels
+		
+		 accountPage.add(accountBalance);	
+		 accountBalance.add(curBalance);
+		 accountBalance.add(balField);
+		 accountBalance.add(depButton);
+		 accountBalance.add(withButton);
+		 accountBalance.add(finBalance);
+		 accountPage.setSize(800, 400);
+		 
 		 
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
+	
+	
+		
 
 }

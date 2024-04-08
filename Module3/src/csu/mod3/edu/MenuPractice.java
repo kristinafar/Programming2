@@ -72,6 +72,8 @@ public class MenuPractice extends Application {
                 PrintWriter myWriter = new PrintWriter(exportStream);               
                 myWriter.print(myText.getText());
                 myWriter.close();
+                Alert alert = new Alert(AlertType.INFORMATION, "Log generated.");
+                alert.showAndWait();
                 } catch (IOException e) {
                 	Alert alert = new Alert(AlertType.INFORMATION, "Failed to export.");
                     alert.showAndWait();

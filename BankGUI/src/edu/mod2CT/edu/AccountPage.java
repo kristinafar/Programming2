@@ -97,7 +97,7 @@ public class AccountPage extends bankAccount {
 		 accountBalance.add(depButton);
 		 accountBalance.add(withButton);
 		 accountBalance.add(finBalance);
-		 accountPage.setSize(800, 400);
+		 accountPage.setSize(700, 200);
 		 
 		 
 		

@@ -8,17 +8,13 @@ import javax.swing.JButton;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.NumberFormat;
-import javax.swing.JFormattedTextField;
 
 
-
-public class AccountPage extends bankAccount {
-	
+public class AccountPage extends JFrame {
 
 	public static void main(String[] args) {
 		
-		final bankAccount account = new bankAccount();
+		final BankAccount account = new BankAccount();
 		
 		
 		//make frame

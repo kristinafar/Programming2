@@ -1,13 +1,13 @@
 package edu.mod2CT.edu;
 
-public class bankAccount {
+public class BankAccount {
 	static double balance;
 	
-	public bankAccount() {
+	public void bankAccount() {
 		balance = 0;
 	}
 	
-	public bankAccount(double startBalance) {
+	public void bankAccount(double startBalance) {
 		balance = startBalance;
 	}
 	

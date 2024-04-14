@@ -1,7 +1,9 @@
 package csu.mod3.edu;
 
+
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
@@ -21,6 +23,7 @@ import java.io.IOException;
 
 public class MenuPractice extends Application {
 
+	
 	 @Override
 	    public void start (Stage primaryStage) {
 		
@@ -86,8 +89,8 @@ public class MenuPractice extends Application {
             public void handle(ActionEvent event) {
             	Random rand = new Random();
         		int g = rand.nextInt(250);
-				vbox.setStyle("-fx-background-color:rgb(" + 0 + "," + g + "," + 0 + ")");
-				myText.setText("RGB Code: 0," + g +",0");            }
+				vbox.setStyle("-fx-background-color: linear-gradient(to bottom right, #e6f7ff, #005580)");
+				}
         });
         
         item4.setOnAction((EventHandler<ActionEvent>) new EventHandler<ActionEvent>(){

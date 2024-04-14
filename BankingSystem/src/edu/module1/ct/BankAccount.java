@@ -1,7 +1,5 @@
 package edu.module1.ct;
 
-import java.util.Scanner;
-
 public class BankAccount {
  String firstName;
  String lastName;
@@ -13,20 +11,12 @@ public class BankAccount {
 	balance = 0;	 
  }
  
- public void deposit() {
-	 System.out.println("Please enter deposit amount:");
-	 Scanner scnr = new Scanner(System.in);
-	 double depAmt = scnr.nextDouble();
+ public void deposit(double depAmt) {
 	 balance = depAmt + balance; 
-	 System.out.println(depAmt + " has been deposisted. The balance is now: " + balance);
 	 }
  
- public void withdrawal() {
-	 System.out.print("Please enter withdrawl amount:");
-	 Scanner scnr = new Scanner(System.in);
-	 double withAmt = scnr.nextDouble();
+ public void withdrawal(double withAmt) {
 	 balance = balance - withAmt;
-	 System.out.println(withAmt + " has been withdrawn. The balance is now: " + balance);
  }
  
  public Double getBalance() {

@@ -5,13 +5,13 @@ public class CheckingAccount extends BankAccount {
 	
 	public void processWithdrawal() {
 		if (balance < 0) {
-			System.out.println("This account has overdrafted. A $30 fee has been appllied. Current balance is now "
+			System.out.println("This account has overdrafted. A $30 fee has been applied. Current balance is now "
 		 + (balance - 30));
 		}
 	}
 	
 	public void displayAccount() {
 		accountSummary();
-		System.out.println("Itnerest Rate: " + intRate +"%");
+		System.out.println("Interest Rate: " + intRate +"%");
 	}
 }
